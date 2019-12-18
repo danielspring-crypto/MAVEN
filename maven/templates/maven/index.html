@@ -1,0 +1,83 @@
+{% load humanize %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>MAVEN</title>
+  </head>
+  <body>
+  	<!-- Image and text -->
+	<nav class="navbar navbar-dark bg-primary">
+	  <a class="navbar-brand" href="#">
+	    <img src="https://scontent.frgn7-1.fna.fbcdn.net/v/t1.15752-9/73460712_1715400681926169_5310689081108201472_n.png?_nc_cat=110&_nc_ohc=lcwWrAHq_-0AQnWev07qowM-MXoO0i0r7qx48fGi8JCY_aB7D4-T48qzA&_nc_ht=scontent.frgn7-1.fna&oh=c59b1508d5fa207b0a1fdcff56003d23&oe=5E686CE5" width="30" height="30" class="d-inline-block align-top" alt="">
+	  </a>
+	  <a class="navbar-brand">MAVEN ACADEMY</a>
+	</nav>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">MAVEN</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	    </form>
+	  </div>
+	</nav>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+			{% for post in posts %}
+				<div class="card mb-3" style="max-width: 700px;">
+		  		<div class="row no-gutters">
+		    	<div class="col-md-4">
+		      	<img class="card-img" src="{{ post.image.url }}">
+		    	</div>
+		    	<div class="col-md-8">
+		      	<div class="card-body">
+		      	<small class="text-muted">uploaded {{ post.date_posted|timesince }} ago</small>
+		        <h5 class="card-title">{{ post.title }}</h5>
+		        <p class="card-text">{{ post.content }}</p>
+		        <p class="card-text">by {{ post.author }}</p>
+		      	</div>
+		    	</div>
+		  		</div>
+				</div>
+		    {% endfor %}			
+			</div>
+			<div class="col-md-3">
+				<div class="card" style="width: 23rem;">
+				  <img src="https://scontent.frgn7-1.fna.fbcdn.net/v/t1.15752-9/73460712_1715400681926169_5310689081108201472_n.png?_nc_cat=110&_nc_ohc=lcwWrAHq_-0AQnWev07qowM-MXoO0i0r7qx48fGi8JCY_aB7D4-T48qzA&_nc_ht=scontent.frgn7-1.fna&oh=c59b1508d5fa207b0a1fdcff56003d23&oe=5E686CE5" class="card-img-top" alt="...">
+				  <div class="card-body">
+				    <h5 class="card-title">MAVEN ACADEMY</h5>
+				    <p class="card-text">What is MAVEN?</p>
+				    <a href="#" class="btn btn-primary">MORE ABOUT US</a>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
